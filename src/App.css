@@ -1,0 +1,130 @@
+main{
+    min-height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center ;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+
+header h1{
+    font-size: 80px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.turns-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+
+.board{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-radius: 50px;
+    background: #424242;
+    box-shadow:  32px 32px 64px #383838,
+                -32px -32px 64px #4c4c4c;
+}
+
+.square:nth-child(1), .square:nth-child(4){
+    border-bottom: 1px solid var(--color2);
+    border-right: 1px solid var(--color2);
+}
+.square:nth-child(2), .square:nth-child(5){
+    border-bottom: 1px solid var(--color2);
+    border-right: 1px solid var(--color2);
+}
+.square:nth-child(3), .square:nth-child(6){
+    border-bottom: 1px solid var(--color2);
+}
+.square:nth-child(7),.square:nth-child(8) {
+    border-right: 1px solid var(--color2);
+}
+
+.square {
+    display: grid;
+    place-items: center;
+    width: 100px;
+    height: 100px;
+    font-size: 80px;
+}
+
+.board .square:hover{
+    cursor: pointer;
+    background-color: #3636362f;
+}
+
+.turns-container .square{
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #474747, #3b3b3b);
+    box-shadow:  32px 32px 64px #383838,
+                -32px -32px 64px #4c4c4c;
+}
+
+.turns-container .is-turn {
+    border-radius: 50px;
+    background: #424242;
+    box-shadow: inset 32px 32px 64px #383838,
+                inset -32px -32px 64px #4c4c4c;
+}
+
+.winnerModal-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: #3a3a3a;
+    
+    display: grid;
+    place-items: center;
+}
+
+.winnerModal-container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 300px;
+    width: 300px;
+    color: #fff;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #3a3a3a, #444444);
+    box-shadow:     20px 20px 60px #363636,
+                    -20px -20px 60px #4a4a4a;
+}
+
+.winnerModal-container div h2{
+    font-size: 40px;
+}
+
+.winnerModal-container div h2 span{
+    font-size: 50px;
+    color: #ad7878;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.winnerModal-container button{
+    font-family: 'roboto';
+    border: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.winnerModal-container button:hover{
+    opacity: .6;
+}
